@@ -1,0 +1,17 @@
+https://www.hackerrank.com/challenges/matrix-script/problem
+Matrix Script
+
+import re
+
+N, _ = input().rstrip().split()
+
+matrix = []
+
+for _ in range(int(N)):
+    matrix.append(list(input()))
+
+matrix = list(zip(*matrix))
+
+matrix_str = ''.join([item for t in matrix for item in t])
+print(re.sub(r'(?<=\w)([^\w\d]+)(?=\w)', ' ', matrix_str))
+matrix = []
